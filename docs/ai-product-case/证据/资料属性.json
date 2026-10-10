@@ -1,0 +1,12 @@
+{
+  "author": "李林翼",
+  "project_period": "2026.08—至今",
+  "version": "1.0",
+  "date": "2026-10-09",
+  "research": "SIM-R",
+  "semantic_demo": "SIM-E",
+  "local_execution": "ACT-LOCAL",
+  "historical_records": "ACT-REC",
+  "prototype": "全部合成，内存状态，无网络与业务写入",
+  "style_comparison": "同内容加载留存与修订样式重建"
+}

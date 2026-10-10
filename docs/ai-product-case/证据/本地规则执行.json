@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-09",
+  "type": "ACT-LOCAL",
+  "method": "调用现有 assess_claim 纯函数；全部输入为合成夹具；不联网、不连接数据库",
+  "results": [
+    {
+      "id": "RULE-01",
+      "expected": "supported",
+      "actual": "supported",
+      "pass": true,
+      "valid_evidence": 1,
+      "warnings": []
+    },
+    {
+      "id": "RULE-02",
+      "expected": "not_verifiable",
+      "actual": "not_verifiable",
+      "pass": true,
+      "valid_evidence": 1,
+      "warnings": []
+    },
+    {
+      "id": "RULE-03",
+      "expected": "not_verifiable",
+      "actual": "not_verifiable",
+      "pass": true,
+      "valid_evidence": 1,
+      "warnings": []
+    },
+    {
+      "id": "RULE-04",
+      "expected": "conflicting",
+      "actual": "conflicting",
+      "pass": true,
+      "valid_evidence": 2,
+      "warnings": []
+    },
+    {
+      "id": "RULE-05",
+      "expected": "insufficient_evidence",
+      "actual": "insufficient_evidence",
+      "pass": true,
+      "valid_evidence": 0,
+      "warnings": [
+        "引用的 source_id 不属于本次研究，已移除"
+      ]
+    },
+    {
+      "id": "RULE-06",
+      "expected": "insufficient_evidence",
+      "actual": "insufficient_evidence",
+      "pass": true,
+      "valid_evidence": 0,
+      "warnings": [
+        "引文无法在保存的原文中定位，已移除"
+      ]
+    },
+    {
+      "id": "RULE-07",
+      "expected": "insufficient_evidence",
+      "actual": "insufficient_evidence",
+      "pass": true,
+      "valid_evidence": 1,
+      "warnings": []
+    },
+    {
+      "id": "RULE-08",
+      "expected": "supported",
+      "actual": "supported",
+      "pass": true,
+      "valid_evidence": 1,
+      "warnings": []
+    },
+    {
+      "id": "RULE-09",
+      "expected": "partially_supported",
+      "actual": "partially_supported",
+      "pass": true,
+      "valid_evidence": 1,
+      "warnings": []
+    },
+    {
+      "id": "RULE-10",
+      "expected": "insufficient_evidence",
+      "actual": "insufficient_evidence",
+      "pass": true,
+      "valid_evidence": 0,
+      "warnings": []
+    }
+  ],
+  "passed": 10,
+  "total": 10,
+  "boundary_observations": [
+    {
+      "id": "BOUND-01",
+      "claim": "Revenue was USD 10 billion in FY2026.",
+      "actual": "supported",
+      "observation": "引文有效，但函数不校验断言的时期或单位与引文一致；该观察不计为语义正确率。"
+    },
+    {
+      "id": "BOUND-02",
+      "claim": "Revenue was USD 10 million in FY2025.",
+      "actual": "supported",
+      "observation": "引文有效，但函数不校验断言的时期或单位与引文一致；该观察不计为语义正确率。"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "date": "2026-10-09",
+  "scope": "离线原型与材料页面，不调用应用或真实 API",
+  "prototype_flows": [
+    "添加与同步",
+    "混合帖子",
+    "单帖报告",
+    "来源定位",
+    "上下文追问",
+    "拒绝",
+    "编辑批准与执行",
+    "取消",
+    "设置保存",
+    "五类异常状态"
+  ],
+  "layouts": [
+    {
+      "width": 1440,
+      "page": "dashboard",
+      "count": 29,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "page": "intelligence",
+      "count": 29,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "page": "research",
+      "count": 35,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "page": "watchlist",
+      "count": 63,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "page": "chat",
+      "count": 33,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "page": "approvals",
+      "count": 36,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "page": "settings",
+      "count": 23,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "dashboard",
+      "count": 61,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "intelligence",
+      "count": 27,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "research",
+      "count": 33,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "watchlist",
+      "count": 61,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "chat",
+      "count": 31,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "approvals",
+      "count": 34,
+      "issues": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "page": "settings",
+      "count": 21,
+      "issues": [],
+      "overflow": false
+    }
+  ],
+  "readers": [
+    {
+      "file": "index.html",
+      "width": 1440,
+      "overflow": false,
+      "missing": [],
+      "articleCount": 1
+    },
+    {
+      "file": "index.html",
+      "width": 390,
+      "overflow": false,
+      "missing": [],
+      "articleCount": 1
+    },
+    {
+      "file": "完整案例.html",
+      "width": 1440,
+      "overflow": false,
+      "missing": [],
+      "articleCount": 13
+    },
+    {
+      "file": "完整案例.html",
+      "width": 390,
+      "overflow": false,
+      "missing": [],
+      "articleCount": 13
+    },
+    {
+      "file": "页面设计手册.html",
+      "width": 1440,
+      "overflow": false,
+      "missing": [],
+      "articleCount": 7
+    },
+    {
+      "file": "页面设计手册.html",
+      "width": 390,
+      "overflow": false,
+      "missing": [],
+      "articleCount": 7
+    }
+  ],
+  "style_comparison": [
+    {
+      "mode": "before",
+      "postFont": "11px",
+      "reportFont": "11px",
+      "postColor": "rgb(82, 99, 127)"
+    },
+    {
+      "mode": "after",
+      "postFont": "16px",
+      "reportFont": "16px",
+      "postColor": "rgb(23, 33, 58)"
+    }
+  ],
+  "js_errors": [],
+  "remote_requests": []
+}

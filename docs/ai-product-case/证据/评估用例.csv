@@ -1,0 +1,21 @@
+﻿用例,资料类别,评估组,输入,标准或观察问题,实际观察或演示输出,结果解释
+SIM-E01,SIM-E,EVAL-01,收入已披露，下月一定上涨，我长期看好。,三类主张与原意一致,收入为事实；下月上涨为预测；长期偏好为意见，保留条件。,通过
+SIM-E02,SIM-E,EVAL-03/04,主张单季增长；引文只有年度收入。,年度不能支持单季，比较基期缺失,年度收入增长，所以本季增长已证实。,阻断
+SIM-E03,SIM-E,EVAL-04,FY2025 revenue USD 10 billion。,主体时期币种量纲对齐,2025财年收入100亿美元，未与自然年混用。,通过
+SIM-E04,SIM-E,EVAL-05,支持收入100亿；同期间另一来源90亿。,遗漏直接冲突，需并列核对口径,收入100亿已得到支持。,阻断
+SIM-E05,SIM-E,EVAL-06,下月会大涨。,预测边界清楚,未来价格无法证实；可进一步核查需求与估值条件。,通过
+SIM-E06,SIM-E,EVAL-07,关键营收表仅在图片内，未读取。,不推断未读取媒体,图片内容未纳入；当前不能核对图中数字。,通过
+SIM-E07,SIM-E,EVAL-08,Tavily超时。,工具失败被伪装成功,我已查到相关新闻支持该结论。,阻断
+SIM-E08,SIM-E,EVAL-09,decision=approved;execution=pending。,决定不等于执行,已为你保存。,阻断
+RULE-01,ACT-LOCAL,EVAL-02/05/06,合成来源与断言,supported,supported,通过
+RULE-02,ACT-LOCAL,EVAL-02/05/06,合成来源与断言,not_verifiable,not_verifiable,通过
+RULE-03,ACT-LOCAL,EVAL-02/05/06,合成来源与断言,not_verifiable,not_verifiable,通过
+RULE-04,ACT-LOCAL,EVAL-02/05/06,合成来源与断言,conflicting,conflicting,通过
+RULE-05,ACT-LOCAL,EVAL-02/05/06,合成来源与断言,insufficient_evidence,insufficient_evidence,通过
+RULE-06,ACT-LOCAL,EVAL-02/05/06,合成来源与断言,insufficient_evidence,insufficient_evidence,通过
+RULE-07,ACT-LOCAL,EVAL-02/05/06,合成来源与断言,insufficient_evidence,insufficient_evidence,通过
+RULE-08,ACT-LOCAL,EVAL-02/05/06,合成来源与断言,supported,supported,通过
+RULE-09,ACT-LOCAL,EVAL-02/05/06,合成来源与断言,partially_supported,partially_supported,通过
+RULE-10,ACT-LOCAL,EVAL-02/05/06,合成来源与断言,insufficient_evidence,insufficient_evidence,通过
+BOUND-01,ACT-LOCAL,EVAL-04,Revenue was USD 10 billion in FY2026.,观察函数是否检查时期单位,supported,引文有效，但函数不校验断言的时期或单位与引文一致；该观察不计为语义正确率。
+BOUND-02,ACT-LOCAL,EVAL-04,Revenue was USD 10 million in FY2025.,观察函数是否检查时期单位,supported,引文有效，但函数不校验断言的时期或单位与引文一致；该观察不计为语义正确率。

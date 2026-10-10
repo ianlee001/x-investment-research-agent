@@ -1,0 +1,40 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="reader.css"><title>X 投资观点研究助手 · 李林翼</title></head><body><header><strong>X 投资观点研究助手</strong><nav><a href="../../README.md">项目总览</a><a href="../agent-case/index.html">AI Agent 工程</a><a href="index.html">AI 产品案例</a><a href="完整案例.html">完整案例</a><a href="原型/index.html">交互原型</a><a href="Figma设计/index.html">Figma 目标设计</a><a href="原稿/00-案例资料说明.md">资料说明</a></nav></header><section class="hero"><p class="tag">AI 产品案例 · 李林翼 · 2026.08—至今</p><h1>从投资观点，到可追溯的研究判断</h1><p>面向公开 X 美股观点的个人研究工作台。以一条帖子为任务单位，组织断言、支持与反对证据、来源及不确定性。</p><div class="cards"><a href="#portfolio"><strong>精简作品集</strong><small>先读项目价值、产品判断与真实成果</small></a><a href="原型/index.html"><strong>体验原型</strong><small>七页交互、核查、来源、审批与异常</small></a><a href="完整案例.html"><strong>完整交付材料</strong><small>研究、PRD、AI 评估、验收与技术附录</small></a></div><p style="margin-top:20px"><a href="正式文档/精简求职作品集.pdf">精简 PDF</a> · <a href="正式文档/精简求职作品集.docx">精简 DOCX</a> · <a href="正式文档/完整产品交付文档.pdf">完整 PDF</a> · <a href="正式文档/完整产品交付文档.docx">完整 DOCX</a></p></section><div class="layout"><aside class="toc"><strong>阅读顺序</strong><a href="#portfolio">01 精简作品集</a><a href="#figma">Figma 产品目标设计</a><a href="原型/index.html">02 交互原型</a><a href="完整案例.html">03 完整案例</a><a href="原稿/00-案例资料说明.md">04 统一资料说明</a><a href="证据/需求验收追溯.csv">需求验收追溯表</a><a href="证据/评估用例.csv">完整评估记录</a><a href="证据/语义评估演示.csv">语义评分演示</a><a href="证据/本地规则执行.json">本地规则结果</a><a href="证据/交付质量检查.json">交付质量检查</a></aside><div class="content"><article id="figma"><h2>Figma 产品目标设计</h2><p>七页桌面与手机原生可编辑设计，可点击演示单帖核查、引用定位、取消重试及审批。资料属性与当前实现关系集中见设计说明。</p><p><a href="https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=17-2">设计文件</a> · <a href="https://www.figma.com/proto/5satRUZqhVo53GQJXfttHw?node-id=12-1270&page-id=5%3A6&starting-point-node-id=12%3A1270&scaling=scale-down-width&content-scaling=fixed">桌面演示</a> · <a href="https://www.figma.com/proto/5satRUZqhVo53GQJXfttHw?node-id=12-2747&page-id=5%3A6&starting-point-node-id=12%3A2747&scaling=scale-down-width&content-scaling=fixed">手机演示</a> · <a href="Figma设计/index.html">本地导出图与材料</a></p></article><article id="portfolio"><h1>X 投资观点研究助手</h1>
+<p>AI 产品实习项目案例｜李林翼｜2026.08—至今</p>
+<p>把一条公开投资观点，变成可追溯、可追问的研究判断。</p>
+<p>看到 MU 或存储板块的上涨观点后，我需要逐一核对价格、披露与新闻。产品把这个任务组织成：关注账号 → 同步混合帖子 → 选择一条观点 → 核查 → 阅读断言与正反证据 → 继续研究。</p>
+<h2>项目概览</h2>
+<div class="table-scroll"><table><tr><th>目标用户</th><th>阅读公开 X 美股观点、愿意核对资料的个人研究者。</th></tr><tr><td>核心问题</td><td>原帖、事实、预测和外部资料分散，来源与时间口径难对应。</td></tr><tr><td>产品形态</td><td>React + Python FastAPI + PostgreSQL 的本地研究工作台。</td></tr><tr><td>个人职责</td><td>问题定义、核心需求与流程判断、验证反馈、产品材料；AI Coding 协作实现。</td></tr><tr><td>交付</td><td>PRD、研究与竞品、交互原型、AI 评估、验收、可读性迭代与技术证据。</td></tr></table></div>
+<p>资料属性统一见《案例资料说明》。本册的简历成绩只采用真实项目记录。</p>
+<div class="page-break"></div>
+<h2>从场景到需求</h2>
+<p>用户关注的人不会只发投资内容，所以先同步混合帖子，再由用户选择具体观点。任务成功不是“给一个看多结论”，而是能解释哪个断言由什么支持、哪些证据相冲突、哪些问题不能确认。</p>
+<div class="table-scroll"><table><tr><th>观察 / 问题</th><th>产品判断</th><th>需求</th></tr><tr><td>混合帖子需要用户筛选</td><td>保留选择权，按单帖触发成本。</td><td>REQ-01—03</td></tr><tr><td>一句话混合事实和预测</td><td>原子拆分与类型区分。</td><td>REQ-04</td></tr><tr><td>数字、时期、出处容易错配</td><td>引文、方向、时期单位同时呈现。</td><td>REQ-05/06</td></tr><tr><td>看完报告仍要深挖</td><td>报告上下文延续，写入单独审批。</td><td>REQ-07/10</td></tr></table></div>
+<p>竞品研究借鉴 AlphaSense 的引用定位与追问；社区情绪表达倾向，不能替代事实核查。需求优先级按闭环必要性和错误后果决定，先做单帖与证据控制，再扩展图片、周报和外部推送。</p>
+<p>研究材料采用任务画像、用户旅程和四条 SIM-R 演示访谈，完整展示方法；真实使用验证目前来自本人。</p>
+<div class="page-break"></div>
+<h2>关键体验与交互</h2>
+<figure><img src="图表/原型桌面.png" alt="原型关键页面"><figcaption>原型关键页面</figcaption></figure>
+<p>摘要先帮助用户了解覆盖范围；断言卡片区分事实、预测、意见与推论；支持和反对证据同层可见；来源可定位保存片段。继续研究保留明确上下文，审批展示参数与期限。</p>
+<p>原型可体验添加账号、同步混合帖子、单帖核查、来源定位、追问及编辑 / 拒绝审批，也包含部分完成、失败、取消和过期状态。所有内容离线合成，不发真实请求。</p>
+<div class="page-break"></div>
+<h2>AI 产品判断与评估</h2>
+<div class="table-scroll"><table><tr><th>环节</th><th>负责什么</th></tr><tr><td>Qwen</td><td>理解、拆分、选择受限工具和组织结果。</td></tr><tr><td>Massive / SEC / Tavily</td><td>行情 / 公司披露 / Web 取证；X 是观点入口。</td></tr><tr><td>Runtime / Middleware</td><td>归属上下文、预算、取消、日志、有限重试与审批。</td></tr><tr><td>持久化</td><td>保存任务结果、来源与审批；原 thread_id 恢复中断。</td></tr></table></div>
+<p>关键判断：引文能找到不等于语义支持；预测不能被资料证明为未来事实；批准不等于写入成功。权限、预算与来源定位用代码控制，语义用独立评价核对，不加入无需求的 RAG 或多 Agent。</p>
+<p>真实记录：一次 NVDA 研究交付 3 条断言、4 个来源、0 引文定位警告；真实审批重启后拒绝成功，个人写入未执行。现有记录有 20 项后端单元及集成测试、最终 6 项浏览器测试。本轮纯函数 10/10 规则场景与 9 项证据单元测试通过；这些结果不等于金融正确率。</p>
+<p>语义评估另用八条 SIM-E 人工输出展示时期、单位、反证与失败的评分及阻断决策，不作为模型实测成绩。</p>
+<div class="page-break"></div>
+<h2>迭代案例：让证据读得清</h2>
+<p>触发：本人反馈全站浅色小字难读、说明冗余。证据：留存样式、修订后截图与浏览器验收。目标：先保证阅读，再优化信息密度。</p>
+<figure><img src="图表/可读性样式对照.png" alt="同内容样式对照"><figcaption>同内容样式对照</figcaption></figure>
+<div class="table-scroll"><table><tr><th>取舍</th><th>可验证变化</th></tr><tr><td>统一字号，手机不再缩小</td><td>正文 16px，辅助 ≥14px。</td></tr><tr><td>深色文字，删除重复说明</td><td>保留来源、时间、单位、期限与关键警告。</td></tr><tr><td>渐进披露</td><td>低频说明与运行活动折叠，反对证据仍可达。</td></tr><tr><td>验收</td><td>七页、1440px / 390px、关键弹窗；字号、4.5:1 对比度和溢出检查。</td></tr></table></div>
+<p>不编造效率或满意度提升。产品启示是：AI 的输出只有被正确阅读和复核，才完成用户任务。</p>
+<div class="page-break"></div>
+<h2>成果、贡献与展示路径</h2>
+<p>我把单帖核查任务转化为可实现的需求、页面和质量控制，使用 AI Coding 协作完成本地 MVP，并用真实调用、审批恢复与可读性验收证明交付。页面核心需求由本人提出，行情页由 AI 建议。</p>
+<h2>可用于简历</h2>
+<ul><li>围绕公开 X 投资观点的跨来源核查，设计账号追踪、混合帖子选取、单帖研究、断言证据报告与审批流程，使用 AI Coding 工具协作完成本地 MVP。</li></ul>
+<ul><li>集成 Qwen、Tavily、X、SEC 与 Massive；真实研究交付 3 条断言与 4 个来源、0 引文定位警告，验证审批跨重启拒绝恢复。</li></ul>
+<ul><li>推进七页可读性修订，统一正文与辅助字号并保留决策字段；项目记录 20 项后端测试及最终 6 项浏览器测试通过。</li></ul>
+<h2>深入阅读</h2>
+<p>先体验离线原型，再阅读完整产品交付文档中的 PRD、评估与迭代；技术附录集中提供目标方案与当前代码的对应关系。下一步优先完善任务去重、上下文追问与简报一致性，再按明确门槛扩展图片和周报。</p>
+<p>官方依据与资料属性见完整文档统一说明和来源登记；原稿、评估表和真实执行记录均随本地材料交付。</p></article></div></div><footer>李林翼 · 2026.08—至今 · AI 产品实习项目案例</footer></body></html>

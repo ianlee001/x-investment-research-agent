@@ -1,0 +1,723 @@
+{
+  "fileKey": "5satRUZqhVo53GQJXfttHw",
+  "author": "李林翼",
+  "period": "2026.08—至今",
+  "kind": "产品目标设计",
+  "fileUrl": "https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=17-2",
+  "desktopUrl": "https://www.figma.com/proto/5satRUZqhVo53GQJXfttHw?node-id=12-1270&page-id=5%3A6&starting-point-node-id=12%3A1270&scaling=scale-down-width&content-scaling=fixed",
+  "mobileUrl": "https://www.figma.com/proto/5satRUZqhVo53GQJXfttHw?node-id=12-2747&page-id=5%3A6&starting-point-node-id=12%3A2747&scaling=scale-down-width&content-scaling=fixed",
+  "pages": {
+    "00 项目与设计说明": "0:1",
+    "01 基础样式与组件": "5:2",
+    "02 桌面设计": "5:3",
+    "03 手机设计": "5:4",
+    "04 关键状态与异常": "5:5",
+    "05 可点击原型": "5:6",
+    "06 可读性迭代与设计决策": "5:7"
+  },
+  "components": {
+    "Button": "7:35",
+    "StatusBadge": "7:52",
+    "Input": "7:70",
+    "Textarea": "7:88",
+    "Select": "7:106",
+    "NavigationItem": "7:115",
+    "Toggle": "7:120",
+    "Card": "7:121",
+    "PostCard": "7:124",
+    "ClaimCard": "7:146",
+    "EvidenceCard": "7:161",
+    "ApprovalCard": "7:221",
+    "EmptyState": "7:222",
+    "Progress": "7:227",
+    "Modal": "7:269"
+  },
+  "desktop": {
+    "P01": {
+      "nodeId": "8:2",
+      "width": 1440,
+      "height": 1000
+    },
+    "P02": {
+      "nodeId": "8:59",
+      "width": 1440,
+      "height": 1000
+    },
+    "P03": {
+      "nodeId": "8:131",
+      "width": 1440,
+      "height": 2162
+    },
+    "P04": {
+      "nodeId": "8:266",
+      "width": 1440,
+      "height": 1000
+    },
+    "P05": {
+      "nodeId": "8:326",
+      "width": 1440,
+      "height": 1000
+    },
+    "P06": {
+      "nodeId": "8:374",
+      "width": 1440,
+      "height": 1000
+    },
+    "P07": {
+      "nodeId": "8:419",
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  "mobile": {
+    "P01": {
+      "nodeId": "9:2",
+      "width": 390,
+      "height": 1178
+    },
+    "P02": {
+      "nodeId": "9:52",
+      "width": 390,
+      "height": 1258
+    },
+    "P03": {
+      "nodeId": "9:117",
+      "width": 390,
+      "height": 2870
+    },
+    "P04": {
+      "nodeId": "9:411",
+      "width": 390,
+      "height": 1250
+    },
+    "P05": {
+      "nodeId": "9:464",
+      "width": 390,
+      "height": 844
+    },
+    "P06": {
+      "nodeId": "9:505",
+      "width": 390,
+      "height": 844
+    },
+    "P07": {
+      "nodeId": "9:543",
+      "width": 390,
+      "height": 1450
+    }
+  },
+  "states": {
+    "Desktop:P02:empty": {
+      "nodeId": "10:2",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P02:empty": {
+      "nodeId": "10:47",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P02:saved": {
+      "nodeId": "10:84",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P02:saved": {
+      "nodeId": "10:132",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P02:loading": {
+      "nodeId": "10:173",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P02:loading": {
+      "nodeId": "10:221",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P02:sync-partial": {
+      "nodeId": "10:621",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P02:sync-partial": {
+      "nodeId": "10:688",
+      "width": 390,
+      "height": 1214
+    },
+    "Desktop:P02:sync-failed": {
+      "nodeId": "10:748",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P02:sync-failed": {
+      "nodeId": "10:798",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P02:filtered": {
+      "nodeId": "10:841",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P02:filtered": {
+      "nodeId": "10:901",
+      "width": 390,
+      "height": 1008
+    },
+    "Desktop:P03:empty": {
+      "nodeId": "10:954",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P03:empty": {
+      "nodeId": "10:989",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P03:running": {
+      "nodeId": "10:1017",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P03:running": {
+      "nodeId": "10:1060",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P03:cancelling": {
+      "nodeId": "10:1096",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P03:cancelling": {
+      "nodeId": "10:1131",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P03:cancelled": {
+      "nodeId": "10:1159",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P03:cancelled": {
+      "nodeId": "10:1202",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P03:failed": {
+      "nodeId": "10:1238",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P03:failed": {
+      "nodeId": "10:1281",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P03:partial": {
+      "nodeId": "10:1317",
+      "width": 1440,
+      "height": 2246
+    },
+    "Mobile:P03:partial": {
+      "nodeId": "10:1426",
+      "width": 390,
+      "height": 2980
+    },
+    "Desktop:P03:collapsed": {
+      "nodeId": "10:1528",
+      "width": 1440,
+      "height": 1644
+    },
+    "Mobile:P03:collapsed": {
+      "nodeId": "10:1616",
+      "width": 390,
+      "height": 2248
+    },
+    "Desktop:P03:retry-running": {
+      "nodeId": "10:1697",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P03:retry-running": {
+      "nodeId": "10:1740",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P04:empty": {
+      "nodeId": "10:1776",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P04:empty": {
+      "nodeId": "10:1814",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P04:market-failed": {
+      "nodeId": "10:1845",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P04:market-failed": {
+      "nodeId": "10:1896",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P04:saved": {
+      "nodeId": "10:1940",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P04:saved": {
+      "nodeId": "10:2002",
+      "width": 390,
+      "height": 1330
+    },
+    "Desktop:P04:edited": {
+      "nodeId": "10:2057",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P04:edited": {
+      "nodeId": "10:2119",
+      "width": 390,
+      "height": 1330
+    },
+    "Desktop:P05:no-context": {
+      "nodeId": "10:2174",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P05:no-context": {
+      "nodeId": "10:2216",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P05:answer": {
+      "nodeId": "10:2251",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P05:answer": {
+      "nodeId": "10:2299",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P06:empty": {
+      "nodeId": "10:2340",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P06:empty": {
+      "nodeId": "10:2375",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P06:rejected": {
+      "nodeId": "10:2403",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P06:rejected": {
+      "nodeId": "10:2444",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P06:executing": {
+      "nodeId": "10:2478",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P06:executing": {
+      "nodeId": "10:2516",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P06:executed": {
+      "nodeId": "10:2547",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P06:executed": {
+      "nodeId": "10:2588",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P06:failed": {
+      "nodeId": "10:2622",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P06:failed": {
+      "nodeId": "10:2662",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P06:expired": {
+      "nodeId": "10:2695",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P06:expired": {
+      "nodeId": "10:2735",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P06:executing-edit": {
+      "nodeId": "10:2768",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P06:executing-edit": {
+      "nodeId": "10:2806",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P06:executed-edit": {
+      "nodeId": "10:2837",
+      "width": 1440,
+      "height": 1000
+    },
+    "Mobile:P06:executed-edit": {
+      "nodeId": "10:2878",
+      "width": 390,
+      "height": 844
+    },
+    "Desktop:P07:saved": {
+      "nodeId": "10:2912",
+      "width": 1440,
+      "height": 1026
+    },
+    "Mobile:P07:saved": {
+      "nodeId": "10:2992",
+      "width": 390,
+      "height": 1562
+    }
+  },
+  "prototype": {
+    "Desktop:P01": "11:2",
+    "Desktop:P02": "11:59",
+    "Desktop:P03": "11:131",
+    "Desktop:P04": "11:236",
+    "Desktop:P05": "11:296",
+    "Desktop:P06": "11:344",
+    "Desktop:P07": "11:393",
+    "Desktop:P02:empty": "11:469",
+    "Desktop:P02:saved": "11:514",
+    "Desktop:P02:loading": "11:562",
+    "Desktop:P02:sync-partial": "11:610",
+    "Desktop:P02:sync-failed": "11:677",
+    "Desktop:P02:filtered": "11:2000",
+    "Desktop:P03:empty": "11:2060",
+    "Desktop:P03:running": "11:2095",
+    "Desktop:P03:cancelling": "11:2138",
+    "Desktop:P03:cancelled": "11:2173",
+    "Desktop:P03:failed": "11:2216",
+    "Desktop:P03:partial": "11:2259",
+    "Desktop:P03:collapsed": "11:2368",
+    "Desktop:P03:retry-running": "11:2456",
+    "Desktop:P04:empty": "11:2499",
+    "Desktop:P04:market-failed": "11:2537",
+    "Desktop:P04:saved": "11:2588",
+    "Desktop:P04:edited": "11:2650",
+    "Desktop:P05:no-context": "11:2712",
+    "Desktop:P05:answer": "11:2754",
+    "Desktop:P06:empty": "11:2802",
+    "Desktop:P06:rejected": "11:2837",
+    "Desktop:P06:executing": "11:2878",
+    "Desktop:P06:executed": "11:2916",
+    "Desktop:P06:failed": "11:2957",
+    "Desktop:P06:expired": "11:2997",
+    "Desktop:P06:executing-edit": "11:3037",
+    "Desktop:P06:executed-edit": "11:3075",
+    "Desktop:P07:saved": "11:3116",
+    "Mobile:P01": "11:3196",
+    "Mobile:P02": "11:3246",
+    "Mobile:P03": "11:3309",
+    "Mobile:P04": "11:3404",
+    "Mobile:P05": "11:3457",
+    "Mobile:P06": "11:3498",
+    "Mobile:P07": "11:3536",
+    "Mobile:P02:empty": "11:3605",
+    "Mobile:P02:saved": "11:3642",
+    "Mobile:P02:loading": "11:3683",
+    "Mobile:P02:sync-partial": "11:3724",
+    "Mobile:P02:sync-failed": "11:3784",
+    "Mobile:P02:filtered": "11:3827",
+    "Mobile:P03:empty": "11:3880",
+    "Mobile:P03:running": "11:3908",
+    "Mobile:P03:cancelling": "11:3944",
+    "Mobile:P03:cancelled": "11:3972",
+    "Mobile:P03:failed": "11:4008",
+    "Mobile:P03:partial": "11:4044",
+    "Mobile:P03:collapsed": "11:4146",
+    "Mobile:P03:retry-running": "11:4227",
+    "Mobile:P04:empty": "11:4263",
+    "Mobile:P04:market-failed": "11:4294",
+    "Mobile:P04:saved": "11:4338",
+    "Mobile:P04:edited": "11:4393",
+    "Mobile:P05:no-context": "11:4448",
+    "Mobile:P05:answer": "11:4483",
+    "Mobile:P06:empty": "11:4524",
+    "Mobile:P06:rejected": "11:4552",
+    "Mobile:P06:executing": "11:4586",
+    "Mobile:P06:executed": "11:4617",
+    "Mobile:P06:failed": "11:4651",
+    "Mobile:P06:expired": "11:4684",
+    "Mobile:P06:executing-edit": "11:4717",
+    "Mobile:P06:executed-edit": "11:4748",
+    "Mobile:P07:saved": "11:4782",
+    "Desktop:launch": "12:1270",
+    "Desktop:overlay:account": "12:1296",
+    "Desktop:overlay:account-error": "12:1313",
+    "Desktop:overlay:edit": "12:1329",
+    "Desktop:overlay:edit-filled": "12:1356",
+    "Desktop:overlay:sourceA": "12:1375",
+    "Desktop:overlay:sourceB": "12:1392",
+    "Desktop:overlay:reject": "12:1407",
+    "Desktop:overlay:daily": "12:1420",
+    "Desktop:overlay:original": "12:1427",
+    "Desktop:overlay:original-daily": "12:1440",
+    "Desktop:overlay:activity": "12:1449",
+    "Desktop:overlay:brief": "12:1460",
+    "Desktop:overlay:add-watch": "12:1471",
+    "Desktop:overlay:account-error-demo": "12:1487",
+    "Mobile:launch": "12:2747",
+    "Mobile:overlay:account": "12:2773",
+    "Mobile:overlay:account-error": "12:2785",
+    "Mobile:overlay:edit": "12:2801",
+    "Mobile:overlay:edit-filled": "12:2820",
+    "Mobile:overlay:sourceA": "12:2839",
+    "Mobile:overlay:sourceB": "12:2854",
+    "Mobile:overlay:reject": "12:2869",
+    "Mobile:overlay:daily": "12:2882",
+    "Mobile:overlay:original": "12:2889",
+    "Mobile:overlay:original-daily": "12:2902",
+    "Mobile:overlay:activity": "12:2911",
+    "Mobile:overlay:brief": "12:2922",
+    "Mobile:overlay:add-watch": "12:2933",
+    "Mobile:overlay:account-error-demo": "12:2949",
+    "Desktop:overlay:states": "21:1481",
+    "Mobile:overlay:states": "21:1508",
+    "Desktop:P03:retry-completed": "27:1497",
+    "Desktop:P03:retry-collapsed": "27:1600",
+    "Desktop:P05:retry-context": "27:1689",
+    "Desktop:P05:retry-answer": "27:1737",
+    "Mobile:P03:retry-completed": "27:1794",
+    "Mobile:P03:retry-collapsed": "27:1890",
+    "Mobile:P05:retry-context": "27:1972",
+    "Mobile:P05:retry-answer": "27:2013"
+  },
+  "flows": [
+    {
+      "nodeId": "12:1270",
+      "name": "桌面演示 / 1440"
+    },
+    {
+      "nodeId": "12:2747",
+      "name": "手机演示 / 390"
+    }
+  ],
+  "exports": [
+    {
+      "name": "P01-桌面",
+      "nodeId": "8:2",
+      "width": 1440,
+      "height": 1000,
+      "format": "png",
+      "original_width": 1440,
+      "original_height": 1000
+    },
+    {
+      "name": "P02-桌面",
+      "nodeId": "8:59",
+      "width": 1440,
+      "height": 1000,
+      "format": "png",
+      "original_width": 1440,
+      "original_height": 1000
+    },
+    {
+      "name": "P03-桌面",
+      "nodeId": "8:131",
+      "width": 1440,
+      "height": 2162,
+      "format": "png",
+      "original_width": 1440,
+      "original_height": 2162
+    },
+    {
+      "name": "P04-桌面",
+      "nodeId": "8:266",
+      "width": 1440,
+      "height": 1000,
+      "format": "png",
+      "original_width": 1440,
+      "original_height": 1000
+    },
+    {
+      "name": "P05-桌面",
+      "nodeId": "8:326",
+      "width": 1440,
+      "height": 1000,
+      "format": "png",
+      "original_width": 1440,
+      "original_height": 1000
+    },
+    {
+      "name": "P06-桌面",
+      "nodeId": "8:374",
+      "width": 1440,
+      "height": 1000,
+      "format": "png",
+      "original_width": 1440,
+      "original_height": 1000
+    },
+    {
+      "name": "P07-桌面",
+      "nodeId": "8:419",
+      "width": 1440,
+      "height": 1000,
+      "format": "png",
+      "original_width": 1440,
+      "original_height": 1000
+    },
+    {
+      "name": "P01-手机",
+      "nodeId": "9:2",
+      "width": 390,
+      "height": 1178,
+      "format": "png",
+      "original_width": 390,
+      "original_height": 1178
+    },
+    {
+      "name": "P02-手机",
+      "nodeId": "9:52",
+      "width": 390,
+      "height": 1258,
+      "format": "png",
+      "original_width": 390,
+      "original_height": 1258
+    },
+    {
+      "name": "P03-手机",
+      "nodeId": "9:117",
+      "width": 390,
+      "height": 2870,
+      "format": "png",
+      "original_width": 390,
+      "original_height": 2870
+    },
+    {
+      "name": "P04-手机",
+      "nodeId": "9:411",
+      "width": 390,
+      "height": 1250,
+      "format": "png",
+      "original_width": 390,
+      "original_height": 1250
+    },
+    {
+      "name": "P05-手机",
+      "nodeId": "9:464",
+      "width": 390,
+      "height": 844,
+      "format": "png",
+      "original_width": 390,
+      "original_height": 844
+    },
+    {
+      "name": "P06-手机",
+      "nodeId": "9:505",
+      "width": 390,
+      "height": 844,
+      "format": "png",
+      "original_width": 390,
+      "original_height": 844
+    },
+    {
+      "name": "P07-手机",
+      "nodeId": "9:543",
+      "width": 390,
+      "height": 1450,
+      "format": "png",
+      "original_width": 390,
+      "original_height": 1450
+    },
+    {
+      "name": "可读性迭代与设计决策",
+      "nodeId": "17:39",
+      "width": 1440,
+      "height": 1790,
+      "format": "png",
+      "original_width": 1440,
+      "original_height": 1790
+    },
+    {
+      "name": "项目与设计说明",
+      "nodeId": "17:2",
+      "width": 1440,
+      "height": 1894,
+      "format": "png",
+      "original_width": 1440,
+      "original_height": 1894
+    },
+    {
+      "name": "审批编辑-桌面",
+      "nodeId": "12:1356",
+      "width": 560,
+      "height": 540,
+      "format": "png",
+      "original_width": 560,
+      "original_height": 540
+    },
+    {
+      "name": "来源定位-手机",
+      "nodeId": "12:2854",
+      "width": 358,
+      "height": 404,
+      "format": "png",
+      "original_width": 358,
+      "original_height": 404
+    },
+    {
+      "name": "研究取消-桌面",
+      "nodeId": "11:2173",
+      "width": 1440,
+      "height": 1000,
+      "format": "png",
+      "original_width": 1440,
+      "original_height": 1000
+    },
+    {
+      "name": "审批拒绝-手机",
+      "nodeId": "11:4552",
+      "width": 390,
+      "height": 844,
+      "format": "png",
+      "original_width": 390,
+      "original_height": 844
+    },
+    {
+      "name": "重试结果-手机",
+      "nodeId": "27:1794",
+      "width": 390,
+      "height": 844,
+      "format": "png",
+      "original_width": 390,
+      "original_height": 844
+    }
+  ],
+  "typeTotals": {
+    "FRAME": 2039,
+    "TEXT": 4251,
+    "COMPONENT_SET": 11,
+    "COMPONENT": 58,
+    "INSTANCE": 2139
+  }
+}

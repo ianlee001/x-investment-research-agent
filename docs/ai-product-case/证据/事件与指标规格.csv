@@ -1,0 +1,9 @@
+﻿事件,触发条件,非敏感属性,需求
+account_added,账号保存成功,account_id,REQ-01
+sync_finished,同步终态,"status,count,partial",REQ-02
+research_requested,服务受理研究,"post_id,request_key",REQ-03
+report_opened,报告可读,"report_id,status",REQ-07
+evidence_opened,打开保存片段,"claim_id,source_id,located",REQ-06
+followup_submitted,追问受理,"report_id,claim_ids",REQ-07
+approval_decided,决定持久化,"approval_id,decision",REQ-10
+run_finished,最终状态保存,"status,model_calls,tokens,reason",REQ-08

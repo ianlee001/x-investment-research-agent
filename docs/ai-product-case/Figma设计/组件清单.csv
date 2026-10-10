@@ -1,0 +1,16 @@
+﻿组件,主组件或变体数量,变体与行为,编辑字段,用途,Figma节点,链接
+Button,15,Style: Primary / Secondary / Danger；State: Default / Hover / Focus / Loading / Disabled,Label,提交、取消、拒绝、关闭,7:35,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-35
+StatusBadge,8,Neutral / Running / Success / Partial / Failed / Conflict / Prediction / Expired,Label,状态同时使用文字与颜色,7:52,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-52
+Input,4,Default / Filled / Error / Disabled,Label、Value,账号、代码、数值字段,7:70,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-70
+Textarea,4,Default / Filled / Error / Disabled,Label、Value,问题、备注、拒绝原因,7:88,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-88
+Select,4,Default / Filled / Error / Disabled,Label、Value,时区选择,7:106,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-106
+NavigationItem,4,Desktop / Mobile × Default / Active,Label,七页导航,7:115,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-115
+Toggle,2,On / Off；原生 Change to 双向切换,状态文字,设置开关,7:120,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-120
+Card,1,单组件,Title、Body,指标与信息卡片,7:121,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-121
+PostCard,1,单组件,Account、Time、Body、Scope,混合帖子；嵌套原帖与核查按钮,7:124,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-124
+ClaimCard,2,Expanded / Collapsed,Title、Meta、Description,断言类型、结论与证据层级,7:146,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-146
+EvidenceCard,2,Support / Oppose,Title、Quote、Meta、Explanation,两个方向使用同等阅读层级,7:161,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-161
+ApprovalCard,6,Pending / Rejected / Executing / Executed / Failed / Expired,Title、Meta、Reason、Parameters,参数、期限、决定与执行分开,7:221,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-221
+EmptyState,1,单组件,Title、Body；嵌套操作按钮,空状态提供明确下一步,7:222,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-222
+Progress,1,单组件,Title、Phase；嵌套取消按钮,运行阶段与取消入口,7:227,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-227
+Modal,3,Account / EditApproval / Source,Title、Quote；嵌套字段与操作按钮,账号、审批编辑与来源定位,7:269,https://www.figma.com/design/5satRUZqhVo53GQJXfttHw?node-id=7-269

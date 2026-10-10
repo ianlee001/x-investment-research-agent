@@ -1,0 +1,222 @@
+{
+  "date": "2026-10-09",
+  "scope": "Local artifact rendering and links; no live application or API calls",
+  "layouts": [
+    {
+      "file": "Figma设计\\index.html",
+      "width": 1440,
+      "viewport": 1440,
+      "small": [],
+      "overflow": [],
+      "images": [
+        {
+          "src": "导出/P01-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P01-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P02-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P02-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P03-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P03-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P04-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P04-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P05-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P05-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P06-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P06-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P07-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P07-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/审批编辑-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/来源定位-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/研究取消-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/审批拒绝-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/重试结果-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/可读性迭代与设计决策.png",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "file": "index.html",
+      "width": 1440,
+      "viewport": 1440,
+      "small": [],
+      "overflow": [],
+      "images": [
+        {
+          "src": "图表/原型桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "图表/可读性样式对照.png",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "file": "Figma设计\\index.html",
+      "width": 390,
+      "viewport": 390,
+      "small": [],
+      "overflow": [],
+      "images": [
+        {
+          "src": "导出/P01-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P01-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P02-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P02-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P03-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P03-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P04-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P04-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P05-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P05-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P06-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P06-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P07-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/P07-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/审批编辑-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/来源定位-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/研究取消-桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/审批拒绝-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/重试结果-手机.png",
+          "loaded": true
+        },
+        {
+          "src": "导出/可读性迭代与设计决策.png",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "file": "index.html",
+      "width": 390,
+      "viewport": 390,
+      "small": [],
+      "overflow": [],
+      "images": [
+        {
+          "src": "图表/原型桌面.png",
+          "loaded": true
+        },
+        {
+          "src": "图表/可读性样式对照.png",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "missingLinks": [],
+  "errors": [],
+  "remoteRequests": [],
+  "pngCount": 21
+}

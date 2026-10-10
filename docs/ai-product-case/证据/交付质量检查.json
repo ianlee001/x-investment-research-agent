@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-09",
+  "status": "通过",
+  "scope": "本地产品案例材料；应用功能、配置、数据库不变；没有付费 API 调用或 GitHub 上传",
+  "checks": {
+    "requirements": 12,
+    "acceptance_groups": 12,
+    "local_links_checked": 160,
+    "prototype_layouts": 14,
+    "prototype_flows": 10,
+    "offline_reader_layouts": 6,
+    "rule_fixtures": "10/10",
+    "evidence_unit_tests": "9 passed",
+    "data_categories": [
+      "ACT-REC",
+      "ACT-LOCAL",
+      "SIM-R",
+      "SIM-E"
+    ],
+    "simulated_interview_roles": 4,
+    "simulated_semantic_examples": 8
+  },
+  "csv_tables": [
+    {
+      "file": "事件与指标规格.csv",
+      "records": 8
+    },
+    {
+      "file": "功能验收用例.csv",
+      "records": 12
+    },
+    {
+      "file": "研究演示记录.csv",
+      "records": 4
+    },
+    {
+      "file": "评估用例.csv",
+      "records": 20
+    },
+    {
+      "file": "语义评估演示.csv",
+      "records": 8
+    },
+    {
+      "file": "需求验收追溯.csv",
+      "records": 12
+    }
+  ],
+  "pdf_documents": [
+    {
+      "file": "完整产品交付文档.pdf",
+      "pages": 45,
+      "minimum_page_characters": 203,
+      "size_bytes": 959313,
+      "sha256": "11b08330c10b57a002e85070161ac7350f7fec434b00658beb3b3518a8136dcd",
+      "rendering": "Word DOCX export; all pages rendered to PNG and visually checked"
+    },
+    {
+      "file": "精简求职作品集.pdf",
+      "pages": 6,
+      "minimum_page_characters": 209,
+      "size_bytes": 355248,
+      "sha256": "60ea33a8a59d62db20c99e592e04732cf51a4a9b5631854bf659403f4acaf7c2",
+      "rendering": "Word DOCX export; all pages rendered to PNG and visually checked"
+    }
+  ],
+  "editable_documents": [
+    {
+      "file": "完整产品交付文档.docx",
+      "embedded_images": 4,
+      "size_bytes": 247202,
+      "sha256": "18fed3a37fed1b4570e6111d7d3eb6f4826ef12e37a6bdfd8e296f5e2aae05f3"
+    },
+    {
+      "file": "精简求职作品集.docx",
+      "embedded_images": 2,
+      "size_bytes": 137067,
+      "sha256": "c54eec782310ea13077e634cf5e831f31a1a5daf2b32ed81308dfcdcec8c3eca"
+    }
+  ],
+  "issues": []
+}

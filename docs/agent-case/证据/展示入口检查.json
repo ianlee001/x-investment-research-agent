@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-10",
+  "scope": "Offline documentation only",
+  "layouts": [
+    {
+      "file": "docs/agent-case/index.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "smallText": 0,
+      "unloadedImages": 0
+    },
+    {
+      "file": "docs/ai-product-case/index.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "smallText": 0,
+      "unloadedImages": 0
+    },
+    {
+      "file": "docs/ai-product-case/Figma设计/index.html",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "smallText": 0,
+      "unloadedImages": 0
+    },
+    {
+      "file": "docs/agent-case/index.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "smallText": 0,
+      "unloadedImages": 0
+    },
+    {
+      "file": "docs/ai-product-case/index.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "smallText": 0,
+      "unloadedImages": 0
+    },
+    {
+      "file": "docs/ai-product-case/Figma设计/index.html",
+      "width": 390,
+      "scrollWidth": 390,
+      "smallText": 0,
+      "unloadedImages": 0
+    }
+  ],
+  "errors": [],
+  "externalRequests": []
+}

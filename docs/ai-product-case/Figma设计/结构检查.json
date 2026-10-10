@@ -1,0 +1,164 @@
+{
+  "reports": [
+    {
+      "page": "00 项目与设计说明",
+      "id": "0:1",
+      "rootCount": 1,
+      "nodes": 37,
+      "text": 30,
+      "autoLayouts": 7,
+      "images": 0,
+      "minFont": 16,
+      "minContrast": 15.19,
+      "small": [],
+      "low": [],
+      "overflow": []
+    },
+    {
+      "page": "01 基础样式与组件",
+      "id": "5:2",
+      "rootCount": 16,
+      "nodes": 268,
+      "text": 148,
+      "autoLayouts": 108,
+      "images": 0,
+      "minFont": 14,
+      "minContrast": 6.42,
+      "small": [],
+      "low": [],
+      "overflow": []
+    },
+    {
+      "page": "02 桌面设计",
+      "id": "5:3",
+      "rootCount": 7,
+      "nodes": 458,
+      "text": 238,
+      "autoLayouts": 220,
+      "images": 0,
+      "minFont": 14,
+      "minContrast": 6.42,
+      "small": [],
+      "low": [],
+      "overflow": []
+    },
+    {
+      "page": "03 手机设计",
+      "id": "5:4",
+      "rootCount": 7,
+      "nodes": 409,
+      "text": 203,
+      "autoLayouts": 206,
+      "images": 0,
+      "minFont": 14,
+      "minContrast": 6.42,
+      "small": [],
+      "low": [],
+      "overflow": []
+    },
+    {
+      "page": "04 关键状态与异常",
+      "id": "5:5",
+      "rootCount": 58,
+      "nodes": 2703,
+      "text": 1315,
+      "autoLayouts": 1386,
+      "images": 0,
+      "minFont": 14,
+      "minContrast": 6.42,
+      "small": [],
+      "low": [],
+      "overflow": []
+    },
+    {
+      "page": "05 可点击原型",
+      "id": "5:6",
+      "rootCount": 112,
+      "nodes": 4578,
+      "text": 2274,
+      "autoLayouts": 2300,
+      "images": 0,
+      "minFont": 14,
+      "minContrast": 6.42,
+      "small": [],
+      "low": [],
+      "overflow": []
+    },
+    {
+      "page": "06 可读性迭代与设计决策",
+      "id": "5:7",
+      "rootCount": 1,
+      "nodes": 45,
+      "text": 36,
+      "autoLayouts": 9,
+      "images": 0,
+      "minFont": 12,
+      "minContrast": 4.04,
+      "small": [
+        {
+          "id": "17:54",
+          "text": "2025 财年收入为 100 亿美元",
+          "font": 12
+        },
+        {
+          "id": "17:55",
+          "text": "FY2025 · USD billion · 发布 2026-0",
+          "font": 12
+        },
+        {
+          "id": "17:56",
+          "text": "来源 B 显示 90 亿美元，收入口径存在冲突。",
+          "font": 12
+        },
+        {
+          "id": "17:57",
+          "text": "图片内容未纳入文字核查。",
+          "font": 12
+        }
+      ],
+      "low": [
+        {
+          "id": "17:54",
+          "text": "2025 财年收入为 100 亿美元",
+          "ratio": 4.04
+        },
+        {
+          "id": "17:55",
+          "text": "FY2025 · USD billion · 发布 2026-0",
+          "ratio": 4.04
+        },
+        {
+          "id": "17:56",
+          "text": "来源 B 显示 90 亿美元，收入口径存在冲突。",
+          "ratio": 4.04
+        },
+        {
+          "id": "17:57",
+          "text": "图片内容未纳入文字核查。",
+          "ratio": 4.04
+        }
+      ],
+      "overflow": []
+    }
+  ],
+  "typeTotals": {
+    "FRAME": 2039,
+    "TEXT": 4251,
+    "COMPONENT_SET": 11,
+    "COMPONENT": 58,
+    "INSTANCE": 2139
+  },
+  "flows": [
+    {
+      "nodeId": "12:1270",
+      "name": "桌面演示 / 1440"
+    },
+    {
+      "nodeId": "12:2747",
+      "name": "手机演示 / 390"
+    }
+  ],
+  "edgeCount": 935,
+  "missing": [],
+  "unreachablePrototypeRoots": []
+}

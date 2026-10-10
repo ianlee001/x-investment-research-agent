@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-10",
+  "type": "ACT-LOCAL",
+  "scope": "No paid research APIs; no application or personal database writes",
+  "checks": {
+    "pytest": {
+      "command": "pytest -q",
+      "passed": 10,
+      "skipped": 10,
+      "warnings": 1,
+      "warning_type": "LangChainBetaWarning",
+      "database_integration": "not run"
+    },
+    "ruff": {
+      "check": "passed",
+      "format_check": "passed",
+      "files_formatted_check": 38
+    },
+    "frontend_build": {
+      "command": "npm run build",
+      "status": "passed",
+      "modules": 1810
+    }
+  },
+  "historical_counts": {
+    "date": "2026-10-08",
+    "backend": 20,
+    "browser": 6,
+    "source": "docs/validation.md",
+    "not_added_to_current_counts": true
+  }
+}
