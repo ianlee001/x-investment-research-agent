@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-10",
+  "mode": "history",
+  "repository": "ianlee001/x-investment-research-agent",
+  "visibility": "private",
+  "files": 181,
+  "bytes": 6591145,
+  "scanned_blobs": 180,
+  "document_containers": {
+    "docx": 2,
+    "pdf": 2
+  },
+  "secret_rules": [
+    "exact configured secrets and contact in raw, URL-encoded or base64 forms",
+    "private_key",
+    "github_token",
+    "vendor_token",
+    "aws_access_key",
+    "jwt",
+    "literal_secret",
+    "url_password"
+  ],
+  "secret_findings": [],
+  "excluded_path_violations": [],
+  "local_links_checked": 311,
+  "broken_links": [],
+  "protected_files_checked": 71,
+  "protected_file_changes": [],
+  "large_files_over_20mb": [],
+  "initial_history": "No Git repository or history existed before this publication",
+  "raw_logs": "Excluded; test record is sanitized summary",
+  "status": "passed"
+}

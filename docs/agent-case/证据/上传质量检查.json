@@ -3,9 +3,9 @@
   "mode": "candidates",
   "repository": "ianlee001/x-investment-research-agent",
   "visibility": "private",
-  "files": 181,
-  "bytes": 6600562,
-  "scanned_blobs": 181,
+  "files": 182,
+  "bytes": 6601637,
+  "scanned_blobs": 182,
   "document_containers": {
     "docx": 2,
     "pdf": 2
@@ -22,7 +22,7 @@
   ],
   "secret_findings": [],
   "excluded_path_violations": [],
-  "local_links_checked": 311,
+  "local_links_checked": 313,
   "broken_links": [],
   "protected_files_checked": 71,
   "protected_file_changes": [],
