@@ -34,7 +34,7 @@
 | Figma 桌面演示 | [1440px 原型](https://www.figma.com/proto/5satRUZqhVo53GQJXfttHw?node-id=12-1270&page-id=5%3A6&starting-point-node-id=12%3A1270&scaling=scale-down-width&content-scaling=fixed) |
 | Figma 手机演示 | [390px 原型](https://www.figma.com/proto/5satRUZqhVo53GQJXfttHw?node-id=12-2747&page-id=5%3A6&starting-point-node-id=12%3A2747&scaling=scale-down-width&content-scaling=fixed) |
 
-仓库为私有，Figma 保留原有权限；分享仓库或设计文件前需确认接收者有访问权限。HTML 及离线原型仍需保留目录结构并在本地打开，未部署 GitHub Pages。真实应用已通过上述自定义域名提供公网入口，进入工作台需要共享访问口令；仓库、离线原型和在线应用是不同入口。
+仓库于 2026-10-19 按本人要求由私有改为公开，代码与文档可直接查看；Figma 保留原有权限。HTML 及离线原型仍需保留目录结构并在本地打开，未部署 GitHub Pages。真实应用已通过上述自定义域名提供公网入口，进入工作台需要共享访问口令；仓库、离线原型和在线应用是不同入口。
 
 ### 1.3 背景、用户和核心问题
 
