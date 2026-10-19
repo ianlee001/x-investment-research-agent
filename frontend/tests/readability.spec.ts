@@ -2,9 +2,17 @@ import { test, expect, type Page } from '@playwright/test'
 
 async function auditText(page: Page) {
   return page.evaluate(() => {
+    // Computed HeroUI tokens can be oklch()/color-mix(), not only rgb(). Let the browser
+    // resolve those colors to sRGB before calculating WCAG relative luminance.
+    const canvas = document.createElement('canvas')
+    canvas.width = canvas.height = 1
+    const context = canvas.getContext('2d', { willReadFrequently: true })!
     function rgba(value: string): number[] {
-      const channels = value.match(/[\d.]+/g)?.map(Number) || []
-      return [channels[0] || 0, channels[1] || 0, channels[2] || 0, channels[3] ?? 1]
+      context.clearRect(0, 0, 1, 1)
+      context.fillStyle = value
+      context.fillRect(0, 0, 1, 1)
+      const [r, g, b, a] = context.getImageData(0, 0, 1, 1).data
+      return [r, g, b, a / 255]
     }
     function over(top: number[], base: number[]) {
       return top.slice(0, 3).map((channel, i) => channel * top[3] + base[i] * (1 - top[3])).concat(1)
@@ -29,6 +37,8 @@ async function auditText(page: Page) {
       const rect = element.getBoundingClientRect(), style = getComputedStyle(element)
       if (!rect.width || !rect.height || rect.right <= 0 || rect.left >= window.innerWidth || style.visibility !== 'visible') continue
       if (element.closest('script, style, option')) continue
+      // React Aria's screen reader only labels have a 1px clipped box.
+      if (style.clipPath === 'inset(50%)' || style.clip === 'rect(0px, 0px, 0px, 0px)') continue
       count++
       const size = parseFloat(style.fontSize), bg = background(element)
       const fg = over(rgba(style.color), bg)

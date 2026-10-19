@@ -1,5 +1,6 @@
 import asyncio
 import json
+import re
 import secrets
 from contextlib import asynccontextmanager
 from datetime import datetime, timedelta
@@ -9,13 +10,14 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
-from sqlalchemy import func, select, text
+from sqlalchemy import func, or_, select, text
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.exc import IntegrityError
 
 from app.approvals import decide
 from app.config import ROOT, get_settings
 from app.db import engine, now, session_scope, uid
+from app.history import delete_conversation, delete_research
 from app.models import (
     Account,
     Approval,
@@ -430,6 +432,11 @@ async def get_run(run_id: str):
     }
 
 
+@app.delete("/api/v1/research/runs/{run_id}")
+async def delete_research_run(run_id: str):
+    return await delete_research(run_id)
+
+
 @app.post("/api/v1/research/runs/{run_id}/cancel")
 async def cancel_run(run_id: str):
     from app.worker import set_terminal
@@ -476,7 +483,7 @@ async def run_events(
                     )
                 )
                 run = await db.get(Run, run_id)
-                finished = run.status in TERMINAL
+                finished = run is None or run.status in TERMINAL
             for row in rows:
                 cursor = row.id
                 yield f"id: {row.id}\nevent: {row.type}\ndata: {json.dumps(jsonable_encoder(public_row(row)), ensure_ascii=False)}\n\n"
@@ -507,12 +514,17 @@ async def create_thread():
 @app.get("/api/v1/chat/threads")
 async def list_threads(limit: int = Query(30, ge=1, le=100), offset: int = Query(0, ge=0)):
     async with session_scope() as db:
-        return [
-            public_row(t)
-            for t in await db.scalars(
-                select(Thread).order_by(Thread.updated_at.desc()).limit(limit).offset(offset)
+        threads = list(
+            await db.scalars(select(Thread).order_by(Thread.updated_at.desc()).limit(limit).offset(offset))
+        )
+        active_threads = set(
+            await db.scalars(
+                select(Run.thread_id).where(
+                    Run.thread_id.in_([thread.id for thread in threads]), Run.status.in_(ACTIVE)
+                )
             )
-        ]
+        )
+        return [{**public_row(thread), "has_active_run": thread.id in active_threads} for thread in threads]
 
 
 @app.get("/api/v1/chat/threads/{thread_id}")
@@ -532,12 +544,38 @@ async def get_thread(thread_id: str, limit: int = Query(50, ge=1, le=200), befor
                 select(Run).where(Run.thread_id == thread_id).order_by(Run.created_at.desc()).limit(10)
             )
         )
+        # Resolve historical citations too, including sources from an earlier turn reused by the model.
+        # The thread join prevents another conversation's source ID from becoming a valid citation.
+        cited_ids = {
+            source_id
+            for message in messages
+            if message.role == "assistant"
+            for source_id in re.findall(r"\bsrc_[0-9a-f]{24}\b", message.content)
+        }
+        visible_run_ids = {m.run_id for m in messages if m.run_id} | {r.id for r in runs}
+        sources = list(
+            await db.scalars(
+                select(Source)
+                .join(Run, Source.run_id == Run.id)
+                .where(
+                    Run.thread_id == thread_id,
+                    or_(Source.run_id.in_(visible_run_ids), Source.id.in_(cited_ids)),
+                )
+                .order_by(Source.retrieved_at, Source.id)
+            )
+        )
     return {
         **public_row(thread),
         "messages": [public_row(m) for m in reversed(messages)],
         "runs": [run_summary(r) for r in runs],
+        "sources": [public_row(source) for source in sources],
         "next_before": messages[-1].id if len(messages) == limit else None,
     }
+
+
+@app.delete("/api/v1/chat/threads/{thread_id}")
+async def delete_chat_thread(thread_id: str):
+    return await delete_conversation(thread_id)
 
 
 @app.post("/api/v1/chat/threads/{thread_id}/messages", status_code=202)

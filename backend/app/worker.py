@@ -15,6 +15,7 @@ from sqlalchemy.dialects.postgresql import insert
 
 from app.agent.context import RunContext
 from app.agent.factory import agent_tools, build_agent
+from app.agent.streaming import assistant_text
 from app.approvals import record_interrupts
 from app.config import get_settings
 from app.db import now, session_scope
@@ -113,9 +114,9 @@ async def execute_run(run_id: str, checkpointer, store):
                         durability="sync",
                     ):
                         if mode == "messages":
-                            message, metadata = chunk
-                            content = message.content
-                            if isinstance(content, str) and content:
+                            message, _metadata = chunk
+                            content = assistant_text(message)
+                            if content:
                                 buffer += content
                                 if len(buffer) >= 100:
                                     await event(run_id, "assistant_delta", {"text": buffer})

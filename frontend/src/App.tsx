@@ -1,49 +1,65 @@
-import { useState } from 'react'
+import { AppLink, Card, ExternalLink, Field, Form, Notice, Button, Spinner } from './ui'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
-import { Activity, ArrowUpRight, Bell, Command, Compass, LayoutDashboard, Menu, MessageSquare, Plus, Search, Settings2, ShieldCheck, Sparkles, X } from 'lucide-react'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { Activity, ArrowUpRight, Compass, LayoutDashboard, MessageSquare, Search, Settings2, ShieldCheck } from 'lucide-react'
+import { buttonVariants } from '@heroui/styles'
 import { api, ApiError } from './api'
-import { Dashboard } from './pages/Dashboard'
-import { Watchlist } from './pages/Watchlist'
-import { Intelligence } from './pages/Intelligence'
-import { Research } from './pages/Research'
-import { Chat } from './pages/Chat'
-import { Approvals } from './pages/Approvals'
-import { Settings } from './pages/Settings'
+
+const Dashboard = lazy(() => import('./pages/Dashboard').then(m => ({ default: m.Dashboard })))
+const Watchlist = lazy(() => import('./pages/Watchlist').then(m => ({ default: m.Watchlist })))
+const Intelligence = lazy(() => import('./pages/Intelligence').then(m => ({ default: m.Intelligence })))
+const Research = lazy(() => import('./pages/Research').then(m => ({ default: m.Research })))
+const Chat = lazy(() => import('./pages/Chat').then(m => ({ default: m.Chat })))
+const Approvals = lazy(() => import('./pages/Approvals').then(m => ({ default: m.Approvals })))
+const Settings = lazy(() => import('./pages/Settings').then(m => ({ default: m.Settings })))
 
 const NAV = [
-  { path: '/', label: '研究总览', sub: 'Overview', icon: LayoutDashboard },
-  { path: '/watchlist', label: '关注列表', sub: 'Watchlist', icon: Activity },
-  { path: '/intelligence', label: 'X 情报', sub: 'Intelligence', icon: Compass },
-  { path: '/research', label: '深度研究', sub: 'Research', icon: Search },
-  { path: '/chat', label: '研究对话', sub: 'Assistant', icon: MessageSquare },
-  { path: '/approvals', label: '待办审批', sub: 'Approvals', icon: ShieldCheck },
+  { path: '/', label: '研究总览', icon: LayoutDashboard },
+  { path: '/watchlist', label: '关注列表', icon: Activity },
+  { path: '/intelligence', label: 'X 情报', icon: Compass },
+  { path: '/research', label: '深度研究', icon: Search },
+  { path: '/chat', label: '研究对话', icon: MessageSquare },
+  { path: '/approvals', label: '待办审批', icon: ShieldCheck },
 ]
+// HeroUI's public variant API keeps real anchors and React Router navigation semantics.
+const pillClasses = buttonVariants({ variant: 'secondary' })
 
 export default function App() {
-  const [menu, setMenu] = useState(false)
   const [token, setToken] = useState('')
-  const location = useLocation(), navigate = useNavigate()
+  const location = useLocation(), navigation = useRef<HTMLElement>(null)
   const health = useQuery({ queryKey: ['health'], queryFn: () => api('/health'), refetchInterval: 15000 })
   const pending = useQuery({ queryKey: ['approvals', 'pending'], queryFn: () => api<any[]>('/approvals?status=pending'), refetchInterval: 12000 })
   const section = NAV.find(n => n.path === location.pathname)?.label || '偏好设置'
-  if (health.error instanceof ApiError && health.error.status === 401) return <div className="login-page"><div className="login-card"><div className="brand-symbol">x<span>·</span></div><h1>欢迎回到研究工作台</h1><p>请输入此应用的访问令牌</p><form onSubmit={e => { e.preventDefault(); sessionStorage.setItem('app_token', token); health.refetch(); }}><input autoFocus type="password" value={token} onChange={e => setToken(e.target.value)} placeholder="APP_AUTH_TOKEN" required /><button className="button primary">进入工作台 <ArrowUpRight size={16} /></button></form></div></div>
+  useEffect(() => {
+    document.title = `${section} · X Research`
+    // On small screens the pills scroll horizontally; keep the active destination in view.
+    navigation.current?.querySelector('[aria-current="page"]')?.scrollIntoView({ block: 'nearest', inline: 'center' })
+  }, [section])
+
+  if (health.error instanceof ApiError && health.error.status === 401) return <div className="login-page">
+    <div className="login-art" aria-hidden="true"><div className="brand-symbol">x<span>·</span></div><h2>Research.<br />With perspective.</h2><div className="login-orbit" /></div>
+    <Card className="login-card"><span className="eyebrow">X RESEARCH</span><h1>进入研究工作台</h1><p>使用共享访问口令继续研究</p>
+      <Form onSubmit={e => { e.preventDefault(); sessionStorage.setItem('app_token', token); health.refetch() }}>
+        <Field label="访问口令" className="field" autoFocus type="password" value={token} onChange={nextValue => setToken(nextValue)} placeholder="输入访问口令" autoComplete="current-password" isRequired />
+        <Button className="button primary full">进入工作台 <ArrowUpRight size={18} /></Button>
+      </Form></Card>
+  </div>
+
   return <div className="app-shell">
-    {menu && <div className="sidebar-scrim" onClick={() => setMenu(false)} />}
-    <aside className={`sidebar ${menu ? 'open' : ''}`}>
-      <NavLink to="/" className="brand"><div className="brand-symbol">x<span>·</span></div><div><strong>X Research</strong></div></NavLink>
-      <div className="workspace-label"><span className="workspace-avatar">I</span><div>个人研究空间</div><span className="workspace-dot" /></div>
-      
-      <nav>{NAV.map(({ path, label, icon: Icon }) => <NavLink key={path} to={path} end={path === '/'} onClick={() => setMenu(false)} className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}><Icon size={19} strokeWidth={1.8} /><span>{label}</span>{path === '/approvals' && !!pending.data?.length && <b className="nav-count">{pending.data.length}</b>}</NavLink>)}</nav>
-      <div className="sidebar-spacer" />
-      
-      <NavLink to="/settings" onClick={() => setMenu(false)} className={({ isActive }) => `nav-item settings-link ${isActive ? 'active' : ''}`}><Settings2 size={19} /><span>偏好设置</span></NavLink>
-      <div className="sidebar-footer"><span className={`status-dot ${health.data?.worker === 'online' ? 'online' : ''}`} /><span>{health.data?.worker === 'online' ? '已连接' : '未连接'}</span><small>V1.0</small></div>
-    </aside>
-    <div className="main-shell">
-      <header className="topbar"><div className="breadcrumbs"><button className="icon-button mobile-menu" onClick={() => setMenu(!menu)} aria-label="打开导航"><Menu size={20} /></button><strong>{section}</strong></div><div className="topbar-right"><span className="topbar-date">{new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' }).format(new Date())}</span><button className="icon-button notification" aria-label="查看待办审批" onClick={() => navigate('/approvals')}><Bell size={18} />{!!pending.data?.length && <i />}</button><div className="avatar">IL</div></div></header>
-      {health.isError && <div className="global-banner">连接中断<button onClick={() => health.refetch()}>重新连接</button></div>}
-      <main className={`content ${location.pathname === '/chat' ? 'chat-content' : ''}`}><Routes><Route path="/" element={<Dashboard />} /><Route path="/watchlist" element={<Watchlist />} /><Route path="/intelligence" element={<Intelligence />} /><Route path="/research" element={<Research />} /><Route path="/chat" element={<Chat />} /><Route path="/approvals" element={<Approvals />} /><Route path="/settings" element={<Settings />} /><Route path="*" element={<Dashboard />} /></Routes></main>
-    </div>
+    <ExternalLink className="skip-link" href="#main-content">跳至主要内容</ExternalLink>
+    <header className="floating-navigation" aria-label="工作台导航">
+      <nav className="navigation-pills" aria-label="主导航" ref={navigation}>{NAV.map(({ path, label, icon: Icon }) =>
+        <AppLink key={path} to={path} aria-current={location.pathname === path ? 'page' : undefined} className={`${pillClasses} navigation-pill ${location.pathname === path ? 'active' : ''}`}>
+          <Icon size={18} strokeWidth={1.8} /><span>{label}</span>{path === '/approvals' && !!pending.data?.length && <span className="nav-count">{pending.data.length}</span>}
+        </AppLink>)}</nav>
+      <AppLink to="/settings" aria-label="偏好设置" aria-current={location.pathname === '/settings' ? 'page' : undefined} className={`${pillClasses} navigation-pill settings-pill ${location.pathname === '/settings' ? 'active' : ''}`}>
+        <Settings2 size={18} /><span className="settings-pill-label">偏好设置</span>
+      </AppLink>
+    </header>
+    <main id="main-content" className={`content ${location.pathname === '/chat' ? 'chat-content' : ''}`}>
+      {health.isError && <Notice className="global-banner notice error">连接中断<Button onPress={() => health.refetch()}>重新连接</Button></Notice>}
+      <Suspense fallback={<Spinner />}><Routes><Route path="/" element={<Dashboard />} /><Route path="/watchlist" element={<Watchlist />} /><Route path="/intelligence" element={<Intelligence />} /><Route path="/research" element={<Research />} /><Route path="/chat" element={<Chat />} /><Route path="/approvals" element={<Approvals />} /><Route path="/settings" element={<Settings />} /><Route path="*" element={<Dashboard />} /></Routes></Suspense>
+    </main>
   </div>
 }
