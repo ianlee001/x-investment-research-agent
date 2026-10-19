@@ -34,7 +34,7 @@
 - 真实数据源验证证明当时所测端点可用，不能证明其他套餐、实时行情、全历史 X 搜索或任意 SEC 自定义财务概念可用。
 - MCP 适配使用锁定的 beta API；依赖升级需要重新运行协议和审批测试。
 - 外部只读调用在崩溃窗口可能重复并计费；长期 Store 与业务表不属于同一 SQLAlchemy 事务，采用幂等 key 恢复。
-- 单个 Worker、单用户本地部署；未进行多租户、公网渗透或高并发负载验收。
+- 初始验收为单个 Worker、本地单用户部署；2026-10-19 的个人 VPS 共享空间上线见文末补记，未进行多租户、公网渗透或高并发负载验收。
 - 宿主未安装 Docker，未实际执行容器构建/启动；交付 Dockerfile/compose 供具备环境时验证。
 - 自动定时简报、同步和复核已实现，验收不等同于数周连续运行稳定性证明；停机期间不会执行远程复核。
 
@@ -102,3 +102,9 @@
 - 发布前运行 `ruff check backend scripts tests` 与 `ruff format --check backend scripts tests`，均通过。工作树的独立 PostgreSQL 集群 56432 中运行全部后端测试，40 项通过；测试使用随机临时库并清理，随后停止测试集群。未调用付费供应商，未写业务数据库。
 - 发布检查覆盖拟上传文件的环境密钥精确匹配、常见 token / 私钥标记、忽略目录和大文件；没有发现问题。`.env`、`.env.local`、数据库、原始日志、`.runtime`、虚拟环境、node_modules、dist 和浏览器临时产物继续排除。
 - 历史真实调用与历史摘要保留原记录，测试通过不代表投资判断准确率、规模上线或 Docker 已完成验收。当前保留 LangChain MCP beta 提示和 Vite chunk 体积提示，均不阻断本次测试与构建。
+
+## 个人 VPS 上线补记（2026-10-19）
+
+- 项目作者确认已完成 [X Research](https://xresearch.86368360.xyz/) 上线：Ubuntu 24.04 LTS、1GB RAM VPS，使用 Nginx 托管前端和代理 FastAPI / SSE，Cloudflare DNS / Tunnel / HTTPS 提供域名访问，systemd 管理 API 与 Agent Worker，PostgreSQL 17 配合 Alembic 保存业务数据。SSH / SCP、Deploy Key、uv / venv、Vite 构建、资源调整和基础安全配置见 [部署技术应用表](deployment.md)。实际上线方式为宿主机服务；Docker 仍是未验收的备选配置。
+- 07:34 UTC（北京时间 15:34）只读 HTTPS 检查：首页及其 JavaScript / CSS 资源返回 200；首页响应含 Cloudflare 标识；未携带访问口令的 `/api/v1/health` 返回 401。机器可读摘要见 [VPS 公网访问检查](agent-case/证据/VPS公网访问检查.json)。
+- 服务器内部配置依据作者本次部署说明；公开检查未登录业务空间、连接 SSH 或调用供应商，不证明研究全流程、SSE 时序、重启自启或长期负载稳定性。本轮仅更新文档与公开检查摘要，没有重启或修改线上服务；未重复运行与本次文档改动无关的应用测试。

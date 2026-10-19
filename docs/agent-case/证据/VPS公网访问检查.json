@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-19T07:34:10.665660+00:00",
+  "base_url": "https://xresearch.86368360.xyz",
+  "authentication_sent": false,
+  "method": "GET",
+  "scope": "Public homepage, linked static assets, and one unauthenticated API request only. No SSH, provider calls, or application mutations.",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "url": "https://xresearch.86368360.xyz/",
+      "content_type": "text/html",
+      "title": "X Research · 投资研究工作台",
+      "cloudflare_header": true
+    },
+    {
+      "path": "/assets/index-C_FCmvoV.js",
+      "status": 200,
+      "content_type": "application/javascript"
+    },
+    {
+      "path": "/assets/index-BoBpNc74.css",
+      "status": 200,
+      "content_type": "text/css"
+    },
+    {
+      "path": "/api/v1/health",
+      "status": 401,
+      "content_type": "application/json"
+    }
+  ]
+}

@@ -4,6 +4,14 @@
 
 用户关注公开 X 账号，在混合帖子中选取一条投资观点，发起跨来源核查，阅读断言、支持与反对证据、来源和不确定性，再继续研究。产品不把所有帖子都当投资内容，也不把多数博主的一致观点当作事实证据。
 
+## 在线运行
+
+**[访问 X Research](https://xresearch.86368360.xyz/)** · 需共享访问口令。
+
+已部署到 Ubuntu 24.04 LTS VPS：Nginx 托管 React / Vite 静态资源并代理 FastAPI / SSE，Cloudflare Tunnel 与 HTTPS 提供域名访问，systemd 管理 API 和 Agent Worker，PostgreSQL 17 保存研究数据。部署针对 1GB RAM 进行数据库连接与内存、应用连接池及 Worker 资源配置。
+
+完整技术应用表、部署结构和公开访问核对见 **[VPS 部署与上线实践](docs/deployment.md)**。当前是共享研究空间、单 Worker 的个人项目测试部署。
+
 ## 一个项目，两个展示入口
 
 | 入口 | 重点 | 建议阅读 |
@@ -34,6 +42,7 @@ Massive 显示上一交易日收盘 / 复权日线，保留日期、USD、单位
 | 历史回归 | 后端 20 项、可读性修订后浏览器 6 项通过 | 2026.10.08，详见 [原验收记录](docs/validation.md) |
 | 历史安全复查 | 后端 10 passed / 10 skipped；Ruff 与生产构建通过 | 2026.10.10；不调用研究 API、不写业务数据库 |
 | 最新回归 | 后端 40 项、浏览器 42 项通过；Ruff 与生产构建通过 | 2026.10.19；数据库测试使用独立临时库，浏览器写操作使用隔离夹具 |
+| VPS 上线 | 作者完成 Ubuntu / Nginx / Cloudflare Tunnel / systemd 部署；公网首页和 JS/CSS 返回 200，未登录 API 返回 401 | 2026.10.19；公开检查未发送口令、未触发研究或数据写入，详见 [上线说明](docs/deployment.md) |
 | 产品设计 | 七页双端 Figma 原生设计、组件库与关键状态，可点击核心路径 | 产品目标设计；不是新增应用能力 |
 
 详见 [工程验证](docs/agent-case/03-验证与复现.md) 与 [本次摘要](docs/agent-case/证据/本地验证摘要.json)。引文可定位不等于语义支持，预测不作为已证实事实。
@@ -70,7 +79,7 @@ powershell -ExecutionPolicy Bypass -File scripts\stop.ps1
 
 停止应用保留数据库；`-Database` 同时停止本项目数据库。`.env.local` 存放本地覆盖值，进程环境变量优先。必需来源配置为 DASHSCOPE_API_KEY / DASHSCOPE_BASE_URL / LLM_MODEL / TAVILY_API_KEY / X_BEARER_TOKEN / MASSIVE_API_KEY / SEC_USER_AGENT；SEC 联系身份由使用者自行提供。
 
-默认本机单用户、单 Worker；非本机监听须配置 APP_AUTH_TOKEN。Dockerfile / compose 随仓库提供，历史未实际启动验收。完整复现、无付费测试和真实验收命令见 [验证与复现](docs/agent-case/03-验证与复现.md)。不要在 clone 后自动运行付费探测或审批批准。
+应用使用共享研究空间、单 Worker；公网部署须配置 APP_AUTH_TOKEN。本节脚本用于 Windows 本地运行；已上线的 Linux 方案见 [VPS 部署说明](docs/deployment.md)。Dockerfile / compose 随仓库保留，本次线上使用宿主机与 systemd，未形成 Docker 启动验收记录。完整复现、无付费测试和真实验收命令见 [验证与复现](docs/agent-case/03-验证与复现.md)。不要在 clone 后自动运行付费探测或审批批准。
 
 ## 目录与上传范围
 
